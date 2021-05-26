@@ -10,3 +10,19 @@ body {
   margin: 0;
   min-height: 100%;
 }
+
+h1 {
+  justify-content: center;
+  display: flex;
+}
+
+h4 {
+  justify-content: center;
+  display: flex;
+}
+
+article {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+}
