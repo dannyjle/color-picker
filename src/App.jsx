@@ -5,7 +5,19 @@ export class App extends Component {
     hue: Math.floor(Math.random() * (359 - 1) + 1),
     saturation: Math.floor(Math.random() * (100 - 1) + 1),
     lightness: Math.floor(Math.random() * (100 - 1) + 1),
-    alpha: Math.floor(Math.random() * (100 - 1) + 1),
+  }
+
+  handleButtonClick = event => {
+    const newHue = Math.floor(Math.random() * (359 - 1) + 1)
+    const newSaturation = Math.floor(Math.random() * (100 - 1) + 1)
+    const newLightness = Math.floor(Math.random() * (100 - 1) + 1)
+
+    const newState = {
+      hue: newHue,
+      saturation: newSaturation,
+      lightness: newLightness,
+    }
+    this.setState(newState)
   }
 
   render() {
@@ -18,6 +30,9 @@ export class App extends Component {
         <main>
           <h1>Color Selector!</h1>
           <h4>Pick your color:</h4>
+          <h5>
+            <button onClick={this.handleButtonClick}>Randomizer</button>
+          </h5>
           <div className="colorBox" style={newStyle}>
             {`hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}
           </div>
